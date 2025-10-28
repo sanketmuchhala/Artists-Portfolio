@@ -4,8 +4,8 @@ email: briannon.sullivan@example.com
 description: >-
   Contemporary artist working in textiles, mixed media, and abstract painting.
   Minimalist portfolio showcasing exhibitions and selected works.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://briannonsullivan.github.io" # Update with your GitHub Pages URL or custom domain
+baseurl: "/Artists-Portfolio" # the subpath of your site, e.g. /blog
+url: "https://sanketmuchhala.github.io" # Update with your GitHub Pages URL or custom domain
 
 # Author information
 author:
