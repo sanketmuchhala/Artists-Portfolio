@@ -1,0 +1,14 @@
+# Uncomment and replace with your custom domain
+# example: briannonsullivan.com
+#
+# Instructions:
+# 1. Uncomment the line above (remove the #)
+# 2. Replace with your actual domain
+# 3. Configure DNS:
+#    - Add A records pointing to:
+#      185.199.108.153
+#      185.199.109.153
+#      185.199.110.153
+#      185.199.111.153
+#    - OR add CNAME record: yourusername.github.io
+# 4. Push this file to enable custom domain on GitHub Pages

@@ -1,0 +1,820 @@
+/* ============================================
+   Briannon Sullivan Portfolio - Main Stylesheet
+   Ultra-minimal, typography-forward design
+   ============================================ */
+
+/* ============================================
+   CSS Reset & Base Styles
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #000;
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  line-height: 1.3;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2.5rem; /* 40px at base 16px */
+}
+
+h2 {
+  font-size: 2rem; /* 32px */
+}
+
+h3 {
+  font-size: 1.5rem; /* 24px */
+}
+
+h4 {
+  font-size: 1.25rem; /* 20px */
+}
+
+h5,
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+a:focus {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   Skip Link (Accessibility)
+   ============================================ */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid #fff;
+  outline-offset: -2px;
+}
+
+/* ============================================
+   Header
+   ============================================ */
+
+.site-header {
+  border-bottom: 1px solid #f5f5f5;
+  padding: 2rem 1.5rem;
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.site-logo {
+  font-size: 1.25rem;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+}
+
+.site-navigation .nav-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.site-navigation .nav-link {
+  font-size: 1rem;
+  position: relative;
+}
+
+.site-navigation .nav-link.active {
+  text-decoration: underline;
+}
+
+.site-navigation .nav-link:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   Main Content
+   ============================================ */
+
+.site-main {
+  flex: 1;
+}
+
+/* ============================================
+   Home Layout
+   ============================================ */
+
+.home-hero {
+  padding: 4rem 1.5rem 3rem;
+  text-align: left;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.site-title {
+  font-size: 3rem;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.site-subtitle {
+  font-size: 1.125rem;
+  color: #404040;
+  max-width: 600px;
+}
+
+/* ============================================
+   Works Grid
+   ============================================ */
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 0 1rem 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.works-grid-small {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+@media (min-width: 768px) {
+  .works-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1.5rem 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .works-grid {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+}
+
+/* ============================================
+   Work Card
+   ============================================ */
+
+.work-card {
+  position: relative;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.work-card-link {
+  display: block;
+}
+
+.work-card-link:focus {
+  outline: 2px solid #000;
+  outline-offset: 4px;
+}
+
+.work-card-figure {
+  position: relative;
+  padding-bottom: 75%; /* 4:3 aspect ratio */
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.work-card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.work-card-link:hover .work-card-image {
+  transform: scale(1.02);
+}
+
+.work-card-info {
+  padding: 1rem 0.75rem;
+  background: #fff;
+}
+
+.work-card-title {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 0.25rem;
+}
+
+.work-card-year {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* ============================================
+   Work Detail Page
+   ============================================ */
+
+.work-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.work-navigation-top {
+  margin-bottom: 2rem;
+}
+
+.back-link {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.work-image-container {
+  margin-bottom: 2rem;
+  background: #f9f9f9;
+}
+
+.work-image {
+  width: 100%;
+  height: auto;
+}
+
+.work-meta {
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.work-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.work-details {
+  border-top: 1px solid #f5f5f5;
+  padding-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.detail-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.detail-row dt {
+  min-width: 120px;
+  font-weight: normal;
+  color: #666;
+}
+
+.detail-row dd {
+  flex: 1;
+}
+
+.work-description {
+  margin-top: 2rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+/* ============================================
+   Work Navigation (Prev/Next)
+   ============================================ */
+
+.work-navigation {
+  border-top: 1px solid #f5f5f5;
+  padding-top: 2rem;
+  margin-top: 3rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  max-width: 45%;
+}
+
+.nav-link.nav-prev {
+  align-items: flex-start;
+}
+
+.nav-link.nav-next {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.nav-label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+}
+
+.nav-title {
+  font-size: 1.125rem;
+}
+
+.nav-disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* ============================================
+   Related Works
+   ============================================ */
+
+.related-works {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid #f5f5f5;
+}
+
+.related-title {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* ============================================
+   Page Layout
+   ============================================ */
+
+.page-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.page-header {
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  font-size: 1.125rem;
+  color: #666;
+}
+
+.page-body {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.page-body h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.page-body h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.page-body ul,
+.page-body ol {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-body ol {
+  list-style: decimal;
+}
+
+/* ============================================
+   Filters
+   ============================================ */
+
+.filters {
+  background: #fafafa;
+  border-top: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+  padding: 2rem 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.filters-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 150px;
+}
+
+.filter-label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+}
+
+.filter-select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.filter-select:hover {
+  border-color: #999;
+}
+
+.filter-select:focus {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+  border-color: #000;
+}
+
+.filter-reset {
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-family: inherit;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-reset:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.filter-reset:focus {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Exhibitions & Press Lists
+   ============================================ */
+
+.exhibitions-list,
+.press-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.year-group {
+  margin-bottom: 3rem;
+}
+
+.year-heading {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.exhibition-item,
+.press-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.exhibition-item:last-child,
+.press-item:last-child {
+  border-bottom: none;
+}
+
+.exhibition-title,
+.press-title {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.exhibition-meta,
+.press-meta {
+  font-size: 0.9375rem;
+  color: #666;
+}
+
+.exhibition-type {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  color: #999;
+  margin-top: 0.25rem;
+}
+
+/* ============================================
+   Contact
+   ============================================ */
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.contact-email,
+.contact-social {
+  font-size: 1.125rem;
+}
+
+.contact-social ul {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+/* ============================================
+   About Page Specifics
+   ============================================ */
+
+.artist-portrait {
+  max-width: 400px;
+  margin: 2rem 0;
+}
+
+.cv-download {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border: 1px solid #000;
+  margin-top: 2rem;
+  transition: all 0.2s ease;
+}
+
+.cv-download:hover {
+  background: #000;
+  color: #fff;
+  opacity: 1;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.site-footer {
+  border-top: 1px solid #f5f5f5;
+  padding: 2rem 1.5rem;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-copyright {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+}
+
+/* ============================================
+   Lightbox
+   ============================================ */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  position: relative;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+}
+
+.lightbox-close:hover {
+  opacity: 0.7;
+}
+
+.lightbox-close:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
+
+@media (max-width: 767px) {
+  .site-title {
+    font-size: 2rem;
+  }
+
+  .work-title,
+  .page-title {
+    font-size: 1.75rem;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .detail-row dt {
+    min-width: auto;
+    font-size: 0.875rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+  }
+
+  .nav-link {
+    max-width: 100%;
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  .site-header,
+  .site-footer,
+  .work-navigation,
+  .filters,
+  .skip-link {
+    display: none;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .page-content,
+  .work-detail {
+    max-width: 100%;
+  }
+}

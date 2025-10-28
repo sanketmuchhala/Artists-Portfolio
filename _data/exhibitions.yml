@@ -1,0 +1,72 @@
+# Exhibitions organized by year
+# Format: year, exhibitions (list)
+
+- year: 2025
+  exhibitions:
+    - title: "Threads of Memory"
+      venue: "Galerie Moderne"
+      city: "San Francisco, CA"
+      type: "Solo"
+      date: "March 15 - April 30, 2025"
+
+    - title: "Contemporary Textiles"
+      venue: "Museum of Contemporary Craft"
+      city: "Portland, OR"
+      type: "Group"
+      date: "January 10 - May 15, 2025"
+
+- year: 2024
+  exhibitions:
+    - title: "Woven Narratives"
+      venue: "The Studio Gallery"
+      city: "Brooklyn, NY"
+      type: "Solo"
+      date: "October 5 - November 20, 2024"
+
+    - title: "Material Conversations"
+      venue: "San Francisco Arts Commission Gallery"
+      city: "San Francisco, CA"
+      type: "Group"
+      date: "June 12 - August 30, 2024"
+
+    - title: "Emerging Artists 2024"
+      venue: "Contemporary Art Center"
+      city: "Seattle, WA"
+      type: "Group"
+      date: "February 8 - March 22, 2024"
+
+- year: 2023
+  exhibitions:
+    - title: "Layered Realities"
+      venue: "Art Space Gallery"
+      city: "Los Angeles, CA"
+      type: "Two-Person"
+      date: "September 14 - October 28, 2023"
+
+    - title: "Fiber & Form"
+      venue: "Berkeley Art Center"
+      city: "Berkeley, CA"
+      type: "Group"
+      date: "May 5 - July 15, 2023"
+
+- year: 2022
+  exhibitions:
+    - title: "New Work"
+      venue: "Mission Gallery"
+      city: "San Francisco, CA"
+      type: "Solo"
+      date: "November 3 - December 17, 2022"
+
+    - title: "Bay Area Now"
+      venue: "Yerba Buena Center for the Arts"
+      city: "San Francisco, CA"
+      type: "Group"
+      date: "April 20 - June 10, 2022"
+
+- year: 2021
+  exhibitions:
+    - title: "Material Studies"
+      venue: "Oakland Museum of California"
+      city: "Oakland, CA"
+      type: "Group"
+      date: "August 12 - October 30, 2021"

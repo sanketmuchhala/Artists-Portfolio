@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="home-hero">
+  <h1 class="site-title">{{ site.title }}</h1>
+  {% if page.subtitle %}
+    <p class="site-subtitle">{{ page.subtitle }}</p>
+  {% endif %}
+</div>
+
+<div class="works-grid" role="list">
+  {% assign featured_works = site.works | where: "featured", true | sort: "order" %}
+  {% if featured_works.size > 0 %}
+    {% for work in featured_works %}
+      {% include work-card.html work=work %}
+    {% endfor %}
+  {% else %}
+    {% assign all_works = site.works | sort: "order" %}
+    {% for work in all_works limit:12 %}
+      {% include work-card.html work=work %}
+    {% endfor %}
+  {% endif %}
+</div>
+
+{% if content != "" %}
+  <div class="home-content">
+    {{ content }}
+  </div>
+{% endif %}

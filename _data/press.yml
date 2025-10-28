@@ -1,0 +1,50 @@
+# Press coverage and mentions
+# Format: title, outlet, year, url (optional)
+
+- title: "Artist Spotlight: Briannon Sullivan Weaves Personal History into Abstract Forms"
+  outlet: "Artforum"
+  year: 2024
+  date: "October 2024"
+  url: "https://artforum.com/example"
+
+- title: "The New Wave of Textile Artists Redefining Contemporary Art"
+  outlet: "Hyperallergic"
+  year: 2024
+  date: "June 2024"
+  url: "https://hyperallergic.com/example"
+
+- title: "Material Conversations: Five Artists to Watch"
+  outlet: "San Francisco Chronicle"
+  year: 2024
+  date: "May 2024"
+  url: "https://sfchronicle.com/example"
+
+- title: "Briannon Sullivan's 'Woven Narratives' Explores Memory and Identity"
+  outlet: "Art in America"
+  year: 2024
+  date: "November 2024"
+  url: "https://artinamerica.com/example"
+
+- title: "Contemporary Textile Art Finds New Voice at Museum of Contemporary Craft"
+  outlet: "Portland Monthly"
+  year: 2024
+  date: "February 2024"
+  url: "https://portlandmonthly.com/example"
+
+- title: "Layered Realities: An Interview with Briannon Sullivan"
+  outlet: "Art Practical"
+  year: 2023
+  date: "September 2023"
+  url: "https://artpractical.com/example"
+
+- title: "Bay Area Artists Pushing Boundaries with Traditional Materials"
+  outlet: "KQED Arts"
+  year: 2022
+  date: "December 2022"
+  url: "https://kqed.org/arts/example"
+
+- title: "Emerging Voices in Contemporary Fiber Art"
+  outlet: "Textile: The Journal of Cloth and Culture"
+  year: 2022
+  date: "Spring 2022"
+  url: ""

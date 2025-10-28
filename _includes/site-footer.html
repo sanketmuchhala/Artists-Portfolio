@@ -1,0 +1,53 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-container">
+
+    <div class="footer-content">
+
+      <div class="footer-info">
+        <p class="footer-copyright">
+          &copy; {{ 'now' | date: "%Y" }} {{ site.author.name | default: site.title }}. All rights reserved.
+        </p>
+      </div>
+
+      {% if site.author.instagram or site.author.twitter or site.author.email %}
+      <div class="footer-social">
+        <ul class="social-links">
+          {% if site.author.email %}
+            <li>
+              <a href="mailto:{{ site.author.email }}" class="social-link" aria-label="Email">
+                Email
+              </a>
+            </li>
+          {% endif %}
+
+          {% if site.author.instagram %}
+            <li>
+              <a href="https://instagram.com/{{ site.author.instagram }}"
+                 class="social-link"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 aria-label="Instagram">
+                Instagram
+              </a>
+            </li>
+          {% endif %}
+
+          {% if site.author.twitter %}
+            <li>
+              <a href="https://twitter.com/{{ site.author.twitter }}"
+                 class="social-link"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 aria-label="Twitter">
+                Twitter
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+      {% endif %}
+
+    </div>
+
+  </div>
+</footer>

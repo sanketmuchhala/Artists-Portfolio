@@ -1,0 +1,10 @@
+# www.robotstxt.org/
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://briannonsullivan.github.io/sitemap.xml
+
+# Note: Update the sitemap URL after deploying to your actual domain

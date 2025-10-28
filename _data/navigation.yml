@@ -1,0 +1,17 @@
+# Main site navigation
+# These links appear in the header
+
+- title: Works
+  url: /works/
+
+- title: About
+  url: /about/
+
+- title: Exhibitions
+  url: /exhibitions/
+
+- title: Press
+  url: /press/
+
+- title: Contact
+  url: /contact/

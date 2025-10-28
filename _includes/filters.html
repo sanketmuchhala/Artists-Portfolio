@@ -1,0 +1,50 @@
+<aside class="filters" role="region" aria-label="Work filters">
+
+  <div class="filters-container">
+
+    <div class="filter-group">
+      <label for="filter-series" class="filter-label">Series</label>
+      <select id="filter-series" class="filter-select" data-filter="series">
+        <option value="">All Series</option>
+        {% assign all_series = site.works | map: "series" | uniq | sort %}
+        {% for series in all_series %}
+          {% if series != "" and series != nil %}
+            <option value="{{ series }}">{{ series }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="filter-year" class="filter-label">Year</label>
+      <select id="filter-year" class="filter-select" data-filter="year">
+        <option value="">All Years</option>
+        {% assign all_years = site.works | map: "year" | uniq | sort | reverse %}
+        {% for year in all_years %}
+          {% if year != "" and year != nil %}
+            <option value="{{ year }}">{{ year }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="filter-medium" class="filter-label">Medium</label>
+      <select id="filter-medium" class="filter-select" data-filter="medium">
+        <option value="">All Media</option>
+        {% assign all_media = site.works | map: "medium" | uniq | sort %}
+        {% for medium in all_media %}
+          {% if medium != "" and medium != nil %}
+            <option value="{{ medium }}">{{ medium }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+    </div>
+
+    <button type="button" class="filter-reset" id="reset-filters" aria-label="Reset all filters">
+      Clear Filters
+    </button>
+
+  </div>
+
+</aside>

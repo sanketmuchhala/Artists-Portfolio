@@ -1,0 +1,25 @@
+{% assign work = include.work %}
+
+<article class="work-card" role="listitem">
+  <a href="{{ work.url | relative_url }}" class="work-card-link">
+
+    <figure class="work-card-figure">
+      <img
+        src="{{ work.thumbnail | default: work.image | relative_url }}"
+        alt="{{ work.alt | default: work.title }}"
+        class="work-card-image"
+        loading="lazy"
+        width="800"
+        height="600"
+      >
+    </figure>
+
+    <div class="work-card-info">
+      <h3 class="work-card-title">{{ work.title }}</h3>
+      {% if work.year %}
+        <p class="work-card-year">{{ work.year }}</p>
+      {% endif %}
+    </div>
+
+  </a>
+</article>

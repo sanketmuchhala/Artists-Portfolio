@@ -1,0 +1,124 @@
+---
+layout: default
+---
+
+<article class="work-detail">
+
+  <!-- Back navigation -->
+  <nav class="work-navigation-top" aria-label="Breadcrumb navigation">
+    <a href="{{ '/works/' | relative_url }}" class="back-link">&larr; All Works</a>
+  </nav>
+
+  <!-- Main image -->
+  <figure class="work-image-container">
+    <img
+      src="{{ page.image | relative_url }}"
+      alt="{{ page.alt | default: page.title }}"
+      class="work-image"
+      width="2400"
+      height="1800"
+      loading="eager"
+    >
+  </figure>
+
+  <!-- Work metadata -->
+  <div class="work-meta">
+    <h1 class="work-title">{{ page.title }}</h1>
+
+    <dl class="work-details">
+      {% if page.year %}
+        <div class="detail-row">
+          <dt>Year</dt>
+          <dd>{{ page.year }}</dd>
+        </div>
+      {% endif %}
+
+      {% if page.medium %}
+        <div class="detail-row">
+          <dt>Medium</dt>
+          <dd>{{ page.medium }}</dd>
+        </div>
+      {% endif %}
+
+      {% if page.dimensions %}
+        <div class="detail-row">
+          <dt>Dimensions</dt>
+          <dd>{{ page.dimensions }}</dd>
+        </div>
+      {% endif %}
+
+      {% if page.series %}
+        <div class="detail-row">
+          <dt>Series</dt>
+          <dd>{{ page.series }}</dd>
+        </div>
+      {% endif %}
+    </dl>
+
+    {% if page.description or content != "" %}
+      <div class="work-description">
+        {% if page.description %}
+          {{ page.description | markdownify }}
+        {% else %}
+          {{ content }}
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Previous/Next navigation -->
+  <nav class="work-navigation" aria-label="Work navigation">
+    {% assign works = site.works | sort: "order" %}
+    {% assign current_index = 0 %}
+    {% for work in works %}
+      {% if work.url == page.url %}
+        {% assign current_index = forloop.index0 %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+
+    {% assign prev_index = current_index | minus: 1 %}
+    {% assign next_index = current_index | plus: 1 %}
+
+    <div class="nav-links">
+      {% if prev_index >= 0 %}
+        {% assign prev_work = works[prev_index] %}
+        <a href="{{ prev_work.url | relative_url }}" class="nav-link nav-prev" rel="prev">
+          <span class="nav-label">Previous</span>
+          <span class="nav-title">{{ prev_work.title }}</span>
+        </a>
+      {% else %}
+        <span class="nav-link nav-prev nav-disabled"></span>
+      {% endif %}
+
+      {% if next_index < works.size %}
+        {% assign next_work = works[next_index] %}
+        <a href="{{ next_work.url | relative_url }}" class="nav-link nav-next" rel="next">
+          <span class="nav-label">Next</span>
+          <span class="nav-title">{{ next_work.title }}</span>
+        </a>
+      {% else %}
+        <span class="nav-link nav-next nav-disabled"></span>
+      {% endif %}
+    </div>
+  </nav>
+
+  <!-- More from this series -->
+  {% if page.series %}
+    {% assign related_works = site.works | where: "series", page.series | sort: "order" %}
+    {% assign related_count = related_works | size %}
+    {% if related_count > 1 %}
+      <section class="related-works">
+        <h2 class="related-title">More from {{ page.series }}</h2>
+        <div class="works-grid works-grid-small">
+          {% for work in related_works limit:6 %}
+            {% unless work.url == page.url %}
+              {% include work-card.html work=work %}
+            {% endunless %}
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+  {% endif %}
+
+</article>

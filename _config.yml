@@ -1,0 +1,83 @@
+# Site settings
+title: Briannon Sullivan
+email: briannon.sullivan@example.com
+description: >-
+  Contemporary artist working in textiles, mixed media, and abstract painting.
+  Minimalist portfolio showcasing exhibitions and selected works.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://briannonsullivan.github.io" # Update with your GitHub Pages URL or custom domain
+
+# Author information
+author:
+  name: Briannon Sullivan
+  email: briannon.sullivan@example.com
+  instagram: briannonsullivan
+  # twitter: briannonsullivan
+
+# Build settings
+markdown: kramdown
+permalink: /work/:slug/
+
+# Collections
+collections:
+  works:
+    output: true
+    permalink: /work/:slug/
+    sort_by: order
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "works"
+    values:
+      layout: "work"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Plugins (GitHub Pages compatible only)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - DEPLOY.md
+
+# SEO settings
+twitter:
+  username: briannonsullivan
+  card: summary_large_image
+
+social:
+  name: Briannon Sullivan
+  links:
+    - https://instagram.com/briannonsullivan
+
+# Open Graph defaults
+og_image: /assets/images/og-default.jpg
+
+# Site navigation (can also use _data/navigation.yml)
+navigation:
+  - title: Works
+    url: /works/
+  - title: About
+    url: /about/
+  - title: Exhibitions
+    url: /exhibitions/
+  - title: Press
+    url: /press/
+  - title: Contact
+    url: /contact/
